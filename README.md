@@ -1,7 +1,7 @@
 # Crime Dashboard: Devon & Cornwall
 
 An interactive dashboard built with Streamlit that explores crime trends across Devon and Cornwall by LSOA from 2022–2025.
-
+View here: [Crime Dashboard](https://crimeapppy-78o46ocybjq6p7qxd3az2i.streamlit.app/)
 ## Features
 
 - 📊 Crime counts over time and by type
