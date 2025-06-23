@@ -14,7 +14,7 @@ import geopandas as gpd
 st.set_page_config(page_title="Crime Trends Across Devon and Cornwall", layout="wide")
 st.title("Explore crime in Devon and Cornwall by LSOA from 2022-2025.")
 st.markdown("""This dashboard explores crime in Devon and Cornwall.
-            Use the tools below to explore using the filter panel on the left.""")
+            Explore years using the filter panel on the left.""")
 
 @st.cache_data
 def load_total_count_data():
@@ -49,8 +49,8 @@ all_years = sorted(count_df["Year"].unique())
 all_lsoas = sorted(count_df["LSOA name"].unique())
 
 selected_year = st.sidebar.selectbox("Select Year", all_years, index=len(all_years)-1)
-selected_lsoa = st.sidebar.selectbox("Select Single LSOA", all_lsoas)
-selected_lsoas = st.sidebar.multiselect("Compare Up to 2 LSOAs", all_lsoas, default=[all_lsoas[0]], max_selections=2)
+selected_lsoa = st.sidebar.selectbox("Select LSOA to Examine", all_lsoas)
+selected_lsoas = st.sidebar.multiselect("Compare up to 2 LSOA trends.", all_lsoas, default=[all_lsoas[0]], max_selections=2)
 
 # ----- Overview -----
 st.header("Area Overview")
@@ -76,7 +76,7 @@ else:
     )
 
 # ----- Map -----
-st.subheader("🗼️ Crime Map by LSOA")
+st.subheader("🗺️ Crime Map by LSOA")
 gdf_map = gdf.merge(yearly_crime, on="LSOA code")
 gdf_map = gdf_map[gdf_map["Year"] == selected_year]
 
