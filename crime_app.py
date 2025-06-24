@@ -12,7 +12,7 @@ import geopandas as gpd
 
 # ----- Page Config -----
 st.set_page_config(page_title="Crime Trends Across Devon and Cornwall", layout="wide")
-st.title("Explore crime in Devon and Cornwall by LSOA from 2022-2025.")
+st.title("Explore crime in Devon and Cornwall by LSOA from May 2022- April 2025.")
 st.markdown("""This dashboard explores crime in Devon and Cornwall.
             Explore years and LSOAs using the filter button (>>) on the left.""")
 
