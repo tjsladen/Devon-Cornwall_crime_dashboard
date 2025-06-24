@@ -14,7 +14,7 @@ import geopandas as gpd
 st.set_page_config(page_title="Crime Trends Across Devon and Cornwall", layout="wide")
 st.title("Explore crime in Devon and Cornwall by LSOA from 2022-2025.")
 st.markdown("""This dashboard explores crime in Devon and Cornwall.
-            Explore years using the filter panel on the left.""")
+            Explore years and LSOAs using the filter button (>>) on the left.""")
 
 @st.cache_data
 def load_total_count_data():
@@ -51,7 +51,7 @@ all_lsoas = sorted(count_df["LSOA name"].unique())
 selected_year = st.sidebar.selectbox("Select Year", all_years, index=len(all_years)-1)
 
 if st.sidebar.button("Find your LSOA"):
-    st.markdown("[Click here to use the postcode lookup tool.](https://findthatpostcode.uk/)")
+    st.markdown("[Click here to use the postcode lookup tool (Redirect), your LSOA will be under 'Secondary Areas'.](https://findthatpostcode.uk/)")
 
 selected_lsoa = st.sidebar.selectbox(
     "Select LSOA to Examine",
