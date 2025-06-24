@@ -17,6 +17,9 @@ This project uses public sector data from:
 - [ONS Geography Portal](https://geoportal.statistics.gov.uk/)
 
 These data sources are licensed under the [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).
+
+- **Code**: Licensed under the [MIT License](LICENSE)
+
 ## Run Locally
 
 ```bash
