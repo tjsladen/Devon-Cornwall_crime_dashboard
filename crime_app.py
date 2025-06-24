@@ -49,9 +49,21 @@ all_years = sorted(count_df["Year"].unique())
 all_lsoas = sorted(count_df["LSOA name"].unique())
 
 selected_year = st.sidebar.selectbox("Select Year", all_years, index=len(all_years)-1)
-selected_lsoa = st.sidebar.selectbox("Select LSOA to Examine", all_lsoas)
-selected_lsoas = st.sidebar.multiselect("Compare up to 2 LSOA trends.", all_lsoas, default=[all_lsoas[0]], max_selections=2)
 
+if st.sidebar.button("Find your LSOA"):
+    st.markdown("[Click here to use the postcode lookup tool.](https://findthatpostcode.uk/)")
+
+selected_lsoa = st.sidebar.selectbox(
+    "Select LSOA to Examine",
+    options=all_lsoas
+)
+
+selected_lsoas = st.sidebar.multiselect(
+    "Compare up to 2 LSOA trends.",
+    options=all_lsoas,
+    default=[all_lsoas[0]],
+    max_selections=2
+)
 # ----- Overview -----
 st.header("Area Overview")
 lsoa_data = count_type_df[(count_type_df["LSOA name"] == selected_lsoa) & (count_type_df["Year"] == selected_year)]
